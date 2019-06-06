@@ -18,6 +18,7 @@ Bug reports and feature requests can be submitted [here](https://github.com/Ante
 AntennaPod has many users and we don't want them to run into trouble when we add a new feature. It's important that we have a significant group test our app, so that we know all possible combinations of phones, Android versions and use cases work as expected. Check out our wiki how to join our [Alpha and Beta testing programmes](https://github.com/AntennaPod/AntennaPod/wiki/Help-test-AntennaPod)!
 
 ## Nightly Builds
+Test
 
 There are APKs available for every branch that is actively worked on. Please note that these might be very unstable versions of the app, which can break your current installation. Install them at your own risk!
 
