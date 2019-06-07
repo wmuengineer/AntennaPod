@@ -15,8 +15,8 @@ build_targets:
       - sdkmanager --install build-tools;27.0.3
       - sdkmanager --install platforms;android-27
       - sdkmanager --install system-images;android-27;default;x86_64
-      # - ./gradlew -Dorg.gradle.jvmargs=-XX:MaxMetaspaceSize=32g -Dfile.encoding=UTF-8 lint
-      - ./gradlew buildNative assembleDebug
+      - keytool -noprompt -genkey -v -keystore app/keystore -alias alias -storepass password -keypass password -keyalg RSA -validity 10 -dname "CN=antennapod.org,OU=dummy,O=dummy,L=dummy,S=dummy,C=US"
+      - ./gradlew assemblePlayRelease :core:testPlayReleaseUnitTest -PdisablePreDex
     tags:
      channel: experimental
 ci:
