@@ -1,0 +1,24 @@
+dependencies:
+  build:
+    - android:latest
+    - androidndk:r15c
+    - java:8.202.08
+    # - gradle:5.4.1
+    # - go:1.12.1
+    # - python:3.6.3
+
+build_targets:
+  - name: default
+    commands:
+      - sdkmanager --install tools
+      - sdkmanager --install platform-tools
+      - sdkmanager --install build-tools;27.0.3
+      - sdkmanager --install platforms;android-27
+      - sdkmanager --install system-images;android-27;default;x86_64
+      - ./gradlew -Dorg.gradle.jvmargs=-XX:MaxMetaspaceSize=32g -Dfile.encoding=UTF-8 lint
+      - ./gradlew buildNative assembleDebug
+ci:
+  builds:
+    - name: android_build
+      build_target: default
+
